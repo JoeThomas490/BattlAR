@@ -15,9 +15,7 @@
 *
 */
 
-using IBM.Watson.DeveloperCloud.Services.TextToSpeech.v1;
 using IBM.Watson.DeveloperCloud.Services.SpeechToText.v1;
-using IBM.Watson.DeveloperCloud.Services.NaturalLanguageClassifier.v1;
 using IBM.Watson.DeveloperCloud.Utilities;
 using IBM.Watson.DeveloperCloud.Widgets;
 using UnityEngine;
@@ -89,36 +87,7 @@ namespace IBM.Watson.DeveloperCloud.DataTypes
         public string Language { get; set; }
     };
 
-    /// <summary>
-    /// Data type sent to change the voice type.
-    /// </summary>
-    public class VoiceData : Widget.Data
-    {
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public VoiceData()
-        { }
-        /// <summary>
-        /// Constructor which takes the voice type enumeration.
-        /// </summary>
-        /// <param name="voice">The voice to select.</param>
-        public VoiceData(VoiceType voice)
-        {
-            Voice = voice;
-        }
 
-        /// <exclude />
-        public override string GetName()
-        {
-            return "Voice";
-        }
-
-        /// <summary>
-        /// The enumeration of the voice to select.
-        /// </summary>
-        public VoiceType Voice { get; set; }
-    };
 
     /// <summary>
     /// This class holds a AudioClip and maximum sample level.
@@ -502,36 +471,4 @@ namespace IBM.Watson.DeveloperCloud.DataTypes
         }
     };
 
-    /// <summary>
-    /// This class is for Natural Language Classify results.
-    /// </summary>
-    public class ClassifyResultData : Widget.Data
-    {
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public ClassifyResultData()
-        { }
-        /// <summary>
-        /// Data constructor.
-        /// </summary>
-        /// <param name="result">The ClassifyResult object.</param>
-        public ClassifyResultData(ClassifyResult result)
-        {
-            Result = result;
-        }
-
-        /// <summary>
-        /// Name of this data type.
-        /// </summary>
-        /// <returns>The readable name.</returns>
-        public override string GetName()
-        {
-            return "ClassifyResult";
-        }
-        /// <summary>
-        /// The ClassifyResult object.
-        /// </summary>
-        public ClassifyResult Result { get; set; }
-    };
 }
